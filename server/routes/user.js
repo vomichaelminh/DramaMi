@@ -95,7 +95,7 @@ router.post("/login", async (req, res) => {
     // send to front end
     res.json({
       token,
-      user: { id: user._id, displayName: user.displayName, email: user.email },
+      user: { id: user._id, displayName: user.displayName },
     });
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -126,6 +126,14 @@ router.post("/tokenIsValid", async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
+});
+
+router.get("/", auth, async (req, res) => {
+  const user = await User.findById(req.user);
+  res.json({
+    displayName: user.displayName,
+    id: user._id,
+  });
 });
 
 export default router;

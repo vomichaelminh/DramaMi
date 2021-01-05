@@ -1,9 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
 }
 
 a {
@@ -36,12 +38,46 @@ ol {
   margin: 1rem 0;
 }
 
+.page {
+  padding: 1rem;
+}
+
 #header {
+  height: 50px;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   background-color: red;
 }
 
 #header .title {
   margin: 0;
   color: white;
+  padding: 0 1rem;
+}
+
+#header .auth-options {
+  display: flex;
+  height: 100%;
+}
+
+#header .auth-options button {
+  background-color: #ec1d1d;
+  color: white;
+  font-size: 1.1rem;
+  padding: 0 1rem;
+}
+
+#header .auth-options button:hover {
+  background-color: #be3a3a;
+}
+
+@media screen and (max-width: 550px) {
+  #header .title {
+    font-size: 1.2rem;
+  }
+  #header .auth-options button {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
 }
