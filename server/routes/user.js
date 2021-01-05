@@ -2,6 +2,7 @@ import express from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import User from "../models/user.js";
+import auth from "../middleware/auth.js";
 
 const router = express.Router();
 
@@ -89,13 +90,39 @@ router.post("/login", async (req, res) => {
     }
 
     // Now logged in, so can now create jwt to use
-    const token = jwt.sign({ id: user._id }, process.env.JWT_TOKEN);
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
 
     // send to front end
     res.json({
       token,
       user: { id: user._id, displayName: user.displayName, email: user.email },
     });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+router.delete("/delete", auth, async (req, res) => {
+  try {
+    const deletedUser = await User.findByIdAndDelete(req.user);
+    res.json(deletedUser);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+router.post("/tokenIsValid", async (req, res) => {
+  try {
+    const token = req.header("x-auth-token");
+    if (!token) return res.json(false);
+
+    const verified = jwt.verify(token, process.env.JWT_SECRET);
+    if (!verified) return res.json(false);
+
+    const user = await User.findById(verified.id);
+    if (!user) return res.json(false);
+
+    return res.json(true);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
