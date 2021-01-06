@@ -10,10 +10,12 @@ export default function Home() {
 
   useEffect(() => {
     const getCurrentDramas = async () => {
-      const dramaRes = await axios.get("http://localhost:5000/dramas", {
-        headers: { "x-auth-token": userData.token },
-      });
-      setDramas(dramaRes.data);
+      if (userData.token) {
+        const dramaRes = await axios.get("http://localhost:5000/dramas", {
+          headers: { "x-auth-token": userData.token },
+        });
+        setDramas(dramaRes.data);
+      }
     };
     getCurrentDramas();
   }, [userData]);
