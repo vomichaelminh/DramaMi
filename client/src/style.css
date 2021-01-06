@@ -1,15 +1,17 @@
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* reset */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-}
-
 a {
-  color: blue;
+  color: #2199df;
   text-decoration: unset;
 }
 
@@ -34,50 +36,125 @@ h5,
 h6,
 p,
 ul,
-ol {
-  margin: 1rem 0;
+ol,
+li {
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
+
+/* general */
 
 .page {
   padding: 1rem;
 }
 
+.container {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+/* header */
+
 #header {
   height: 50px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  background-color: red;
+  align-items: center;
+  background-color: #e02525;
 }
-
 #header .title {
   margin: 0;
-  color: white;
   padding: 0 1rem;
+  color: #ffffff;
 }
-
 #header .auth-options {
-  display: flex;
   height: 100%;
+  display: flex;
 }
-
 #header .auth-options button {
-  background-color: #ec1d1d;
-  color: white;
-  font-size: 1.1rem;
   padding: 0 1rem;
+  background-color: #b91b1b;
+  color: #ffffff;
+  font-size: 1.1rem;
 }
-
 #header .auth-options button:hover {
   background-color: #be3a3a;
 }
+
+/* form */
+
+.form label,
+.form input {
+  display: block;
+}
+.form input {
+  margin-bottom: 1rem;
+}
+.form label {
+  margin-bottom: 0.2rem;
+}
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="password"] {
+  width: 100%;
+  padding: 0.3rem;
+  border: 1px solid #c2c2c2;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  font-size: 1.1rem;
+}
+.form input:focus {
+  border: 1px solid #50a4e9;
+  box-shadow: inset 0px 0px 5px rgba(38, 142, 228, 0.5);
+  outline: none;
+}
+.form input[type="submit"] {
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #6aa051;
+  border-radius: 8px;
+  background-color: #c8ecb7;
+  font-size: 1.1rem;
+}
+
+/* todo list */
+
+.todo-list ul {
+  list-style: disc;
+  cursor: pointer;
+}
+
+.todo-list li:hover {
+  text-decoration: line-through;
+}
+
+/* error notice */
+
+.error-notice {
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border: 1px solid #e07c7c;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8d6d6;
+}
+.error-notice button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #df4343;
+  color: #ffffff;
+}
+
+/* media queries */
 
 @media screen and (max-width: 550px) {
   #header .title {
     font-size: 1.2rem;
   }
   #header .auth-options button {
+    padding: 0 0.5rem;
     font-size: 0.9rem;
-    padding: 0.5rem;
   }
 }
