@@ -8,30 +8,21 @@ const Dramas = ({ dramas }) => {
     <div>
       <h2>Drama List:</h2>
       <div className="dramas">
-        {dramas ? console.log(dramas) : ""}
+        {dramas ? console.log(dramas[0]) : ""}
         {dramas
           ? dramas.map((drama) => (
-              <div className="drama-item">
-                <Drama
-                  key={drama._id}
-                  title={drama.title}
-                  image={drama.image}
-                  description={drama.description}
-                />
-              </div>
+              <Drama
+                key={drama._id}
+                id={drama._id}
+                title={drama.title}
+                image={drama.image}
+                description={drama.description}
+              />
             ))
           : ""}
       </div>
     </div>
   );
 };
-
-const Dramass = styled.div`
-  min-height: 80vh;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  grid-column-gap: 3rem;
-  grid-row-gap: 5rem;
-`;
 
 export default Dramas;

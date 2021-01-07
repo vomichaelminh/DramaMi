@@ -3,6 +3,7 @@ import { useHistory, Link } from "react-router-dom";
 import UserContext from "../../context/UserContext";
 import ErrorNotice from "../misc/ErrorNotice";
 import axios from "axios";
+import "../../style.css";
 
 const Form = () => {
   const [title, setTitle] = useState();
@@ -37,7 +38,7 @@ const Form = () => {
   };
 
   return (
-    <div className="form">
+    <div className="form-container">
       <h2>Add a Drama</h2>
       {error && (
         <ErrorNotice message={error} clearError={() => setError(undefined)} />
