@@ -4,6 +4,8 @@ import axios from "axios";
 import Header from "./components/layout/Header";
 import Home from "./components/pages/Home";
 import Login from "./components/auth/Login";
+import Dramas from "./components/Dramas/Dramas";
+import Form from "./components/Form/Form";
 import Register from "./components/auth/Register";
 import UserContext from "./context/UserContext";
 
@@ -50,6 +52,8 @@ const App = () => {
           <div className="container">
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route path="/dramas" component={Dramas} />
+              <Route path="/form" component={Form} />
               <Route path="/login" component={Login} />
               <Route path="/register" component={Register} />
             </Switch>

@@ -14,7 +14,7 @@ export default function Register() {
   const { setUserData } = useContext(UserContext);
   const history = useHistory();
 
-  const submit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
@@ -42,7 +42,7 @@ export default function Register() {
       {error && (
         <ErrorNotice message={error} clearError={() => setError(undefined)} />
       )}
-      <form className="form" onSubmit={submit}>
+      <form className="form" onSubmit={handleSubmit}>
         <label htmlFor="register-email">Email</label>
         <input
           id="register-email"

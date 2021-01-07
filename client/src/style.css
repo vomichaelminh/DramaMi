@@ -60,7 +60,7 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #e02525;
+  background-color: #1675b6;
 }
 #header .title {
   margin: 0;
@@ -73,12 +73,12 @@ li {
 }
 #header .auth-options button {
   padding: 0 1rem;
-  background-color: #b91b1b;
+  background-color: #1675b6;
   color: #ffffff;
   font-size: 1.1rem;
 }
 #header .auth-options button:hover {
-  background-color: #be3a3a;
+  background-color: #115380;
 }
 
 /* form */

@@ -4,8 +4,8 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 
-import userRoute from "./routes/user.js";
-import dramaRoute from "./routes/drama.js";
+import userRoutes from "./routes/user.js";
+import dramaRoutes from "./routes/drama.js";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -33,8 +33,8 @@ mongoose.connect(
 mongoose.set("useFindAndModify", false);
 
 // routes
-app.use("/users", userRoute);
-app.use("/dramas", dramaRoute);
+app.use("/users", userRoutes);
+app.use("/dramas", dramaRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);

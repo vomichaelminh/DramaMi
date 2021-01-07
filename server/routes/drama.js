@@ -6,18 +6,20 @@ const router = express.Router();
 
 router.post("/", auth, async (req, res) => {
   try {
-    const { title } = req.body;
+    const { title, description, image } = req.body;
 
     // validation
 
     if (!title) {
       return res
         .status(400)
-        .json({ message: "Not all fields have been entered." });
+        .json({ message: "You need to enter a drama title." });
     }
 
     const newDrama = new Drama({
       title,
+      description,
+      image,
       userId: req.user,
     });
     const savedDrama = await newDrama.save();

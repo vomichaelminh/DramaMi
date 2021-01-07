@@ -25,7 +25,9 @@ export default function Home() {
       {userData.user ? (
         <div className="">
           <h1>Welcome {userData.user.displayName}</h1>
+
           <Dramas dramas={dramas} />
+          <Link to="/form">Add Drama</Link>
         </div>
       ) : (
         <div>

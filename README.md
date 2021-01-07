@@ -1,3 +1,3 @@
 # DramaMi
 
-# MERN Stack app which helps keep track of dramas and find new ones
+MERN Stack app which helps keep track of dramas and find new ones
