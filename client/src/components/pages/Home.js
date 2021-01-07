@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import UserContext from "../../context/UserContext";
 import axios from "axios";
 import Dramas from "../Dramas/Dramas";
+import "./style.home.css";
 
-export default function Home() {
+const Home = () => {
   const { userData } = useContext(UserContext);
   const [dramas, setDramas] = useState();
 
@@ -25,9 +26,8 @@ export default function Home() {
       {userData.user ? (
         <div className="">
           <h1>Welcome {userData.user.displayName}</h1>
-
-          <Dramas dramas={dramas} />
           <Link to="/form">Add Drama</Link>
+          <Dramas dramas={dramas} />
         </div>
       ) : (
         <div>
@@ -39,31 +39,6 @@ export default function Home() {
       )}
     </div>
   );
-}
+};
 
-// useEffect(() => {
-//   const checkLoggedin = async () => {
-//     // grab current token in browser
-//     let token = localStorage.getItem("auth-token");
-//     if (token === null) {
-//       localStorage.setItem("auth-token", "");
-//       token = "";
-//     }
-//     const tokenRes = await axios.post(
-//       "http://localhost:5000/users/tokenIsValid",
-//       null,
-//       { headers: { "x-auth-token": token } }
-//     );
-//     if (tokenRes.data) {
-//       const userRes = await axios.get("http://localhost:5000/users/", {
-//         headers: { "x-auth-token": token },
-//       });
-//       setUserData({
-//         token,
-//         user: userRes.data,
-//       });
-//     }
-//   };
-
-//   checkLoggedin();
-// }, []);
+export default Home;

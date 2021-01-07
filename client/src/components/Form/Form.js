@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import UserContext from "../../context/UserContext";
 import ErrorNotice from "../misc/ErrorNotice";
 import axios from "axios";
@@ -10,7 +10,7 @@ const Form = () => {
   const [image, setImage] = useState();
   const [error, setError] = useState();
 
-  const history = useHistory();
+  // const history = useHistory();
 
   const handleReset = () => {
     Array.from(document.querySelectorAll("input")).forEach(
@@ -63,15 +63,9 @@ const Form = () => {
           type="text"
           onChange={(e) => setImage(e.target.value)}
         />
-
-        <button
-          onClick={() => {
-            history.goBack();
-          }}
-          type="submit"
-        >
-          Add Drama
-        </button>
+        <button type="submit">Add Drama</button>
+        <br />
+        <Link to="/">View Dramas</Link>
       </form>
     </div>
   );

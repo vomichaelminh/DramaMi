@@ -9,6 +9,9 @@ const dramaSchema = new mongoose.Schema({
     type: String,
     // required: true,
   },
+  rating: {
+    type: String,
+  },
   image: {
     type: String,
     // required: true,
