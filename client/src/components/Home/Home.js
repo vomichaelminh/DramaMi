@@ -24,8 +24,7 @@ const Home = () => {
   return (
     <div className="page">
       {userData.user ? (
-        <div className="">
-          <h1>Welcome {userData.user.displayName}</h1>
+        <div className="drama-section">
           <Link to="/form">Add Drama</Link>
           <Dramas dramas={dramas} />
         </div>

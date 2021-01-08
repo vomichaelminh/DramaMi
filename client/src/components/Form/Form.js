@@ -1,14 +1,15 @@
 import React, { useState, useContext } from "react";
-import { useHistory, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import UserContext from "../../context/UserContext";
 import ErrorNotice from "../ErrorNotice/ErrorNotice";
 import axios from "axios";
-import "../../style.css";
+import "./style.form.css";
 
 const Form = () => {
   const [title, setTitle] = useState();
   const [description, setDescription] = useState();
   const [image, setImage] = useState();
+  const [rating, setRating] = useState();
   const [error, setError] = useState();
 
   // const history = useHistory();
@@ -25,7 +26,7 @@ const Form = () => {
     e.preventDefault();
     handleReset();
     try {
-      const newDrama = { title, description, image };
+      const newDrama = { title, description, image, rating };
       await axios.post("http://localhost:5000/dramas", newDrama, {
         headers: { "x-auth-token": userData.token },
       });
@@ -64,9 +65,19 @@ const Form = () => {
           type="text"
           onChange={(e) => setImage(e.target.value)}
         />
-        <button type="submit">Add Drama</button>
-        <br />
-        <Link to="/">View Dramas</Link>
+        <label htmlFor="register-display-name">
+          Rating (1: lowest 5: highest)
+        </label>
+        <input
+          id="register-display-name"
+          type="text"
+          onChange={(e) => setRating(e.target.value)}
+        />
+        <div className="form-buttons">
+          <button type="submit">Add Drama</button>
+          <br />
+          <Link to="/">View Dramas</Link>
+        </div>
       </form>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./style.error.css";
 const ErrorNotice = (props) => {
   return (
     <div className="error-notice">

@@ -1,8 +1,7 @@
 body {
   font-family: "Poppins", sans-serif;
+  background-color: #e9eaed;
 }
-
-/* reset */
 
 * {
   margin: 0;
@@ -42,8 +41,6 @@ li {
   margin-bottom: 1em;
 }
 
-/* general */
-
 .page {
   padding: 1rem;
 }
@@ -52,36 +49,6 @@ li {
   margin: 0 auto;
   max-width: 1500px;
 }
-
-/* header */
-
-#header {
-  height: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #1675b6;
-}
-#header .title {
-  margin: 0;
-  padding: 0 1rem;
-  color: #ffffff;
-}
-#header .auth-options {
-  height: 100%;
-  display: flex;
-}
-#header .auth-options button {
-  padding: 0 1rem;
-  background-color: #1675b6;
-  color: #ffffff;
-  font-size: 1.1rem;
-}
-#header .auth-options button:hover {
-  background-color: #115380;
-}
-
-/* form */
 
 .form {
   width: 500px;
@@ -126,39 +93,16 @@ li {
   background-color: #c8ecb7;
   font-size: 1.1rem;
 }
-
-/* todo list */
-
-.todo-list ul {
-  list-style: disc;
-  cursor: pointer;
-}
-
-.todo-list li:hover {
-  text-decoration: line-through;
-}
-
-/* error notice */
-
-.error-notice {
-  margin: 1rem 0;
-  padding: 0.5rem;
-  border: 1px solid #e07c7c;
+.form button[type="submit"] {
+  color: #2199df;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #6aa051;
   border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #f8d6d6;
+  background-color: #c8ecb7;
+  font-size: 1.1rem;
+  font-size: 1rem;
+  text-decoration: unset;
 }
-.error-notice button {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: #df4343;
-  color: #ffffff;
-}
-
-/* media queries */
 
 @media screen and (max-width: 550px) {
   #header .title {

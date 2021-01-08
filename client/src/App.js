@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import axios from "axios";
 import Header from "./components/Header/Header";
-import Home from "./components/pages/Home";
+import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Dramas from "./components/Dramas/Dramas";
 import Form from "./components/Form/Form";

@@ -1,0 +1,37 @@
+#header {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1675b6;
+}
+
+.header-right {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header-right h4 {
+  color: white;
+}
+#header .title {
+  margin: 0;
+  padding: 0 1rem;
+  color: #ffffff;
+}
+#header .auth-options {
+  height: 100%;
+  display: flex;
+}
+#header .auth-options button {
+  padding: 0 1rem;
+  background-color: #1675b6;
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+#header .auth-options button:hover {
+  background-color: #115380;
+  height: 100%;
+}

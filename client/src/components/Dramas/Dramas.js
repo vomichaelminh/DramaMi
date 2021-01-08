@@ -16,6 +16,7 @@ const Dramas = ({ dramas }) => {
                 title={drama.title}
                 image={drama.image}
                 description={drama.description}
+                rating={drama.rating}
               />
             ))
           : ""}

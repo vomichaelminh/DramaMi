@@ -2,7 +2,7 @@ import Drama from "../models/drama.js";
 
 export const createDrama = async (req, res) => {
   try {
-    const { title, description, image } = req.body;
+    const { title, description, image, rating } = req.body;
 
     // validation
 
@@ -16,6 +16,7 @@ export const createDrama = async (req, res) => {
       title,
       description,
       image,
+      rating,
       userId: req.user,
     });
     const savedDrama = await newDrama.save();
