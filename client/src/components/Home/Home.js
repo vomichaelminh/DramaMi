@@ -25,7 +25,9 @@ const Home = () => {
     <div className="page">
       {userData.user ? (
         <div className="drama-section">
-          <Link to="/form">Add Drama</Link>
+          <Link className="add" to="/form">
+            Add Drama
+          </Link>
           <Dramas dramas={dramas} />
         </div>
       ) : (

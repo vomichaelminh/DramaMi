@@ -1,1 +1,5 @@
-
+.add:hover {
+  background-color: #1675b6;
+  padding: 0.3rem;
+  color: white;
+}

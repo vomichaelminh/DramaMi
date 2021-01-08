@@ -5,7 +5,9 @@ import "./style.dramas.css";
 const Dramas = ({ dramas }) => {
   return (
     <div>
-      <h2>Drama List:</h2>
+      <div className="top">
+        <h2>My Drama List</h2>
+      </div>
       <div className="dramas">
         {dramas ? console.log(dramas) : ""}
         {dramas
