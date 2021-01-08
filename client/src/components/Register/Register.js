@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import UserContext from "../../context/UserContext";
 import Axios from "axios";
-import ErrorNotice from "../misc/ErrorNotice";
+import ErrorNotice from "../ErrorNotice/ErrorNotice";
 
 export default function Register() {
   const [email, setEmail] = useState();

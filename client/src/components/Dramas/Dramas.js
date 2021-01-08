@@ -1,6 +1,5 @@
 import React from "react";
 import Drama from "./Drama/Drama";
-import styled from "styled-components";
 import "./style.dramas.css";
 
 const Dramas = ({ dramas }) => {
@@ -8,7 +7,7 @@ const Dramas = ({ dramas }) => {
     <div>
       <h2>Drama List:</h2>
       <div className="dramas">
-        {dramas ? console.log(dramas[0]) : ""}
+        {dramas ? console.log(dramas) : ""}
         {dramas
           ? dramas.map((drama) => (
               <Drama

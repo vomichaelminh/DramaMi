@@ -23,4 +23,5 @@ const dramaSchema = new mongoose.Schema({
 });
 
 const Drama = mongoose.model("Drama", dramaSchema);
+
 export default Drama;

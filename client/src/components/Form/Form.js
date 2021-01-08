@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useHistory, Link } from "react-router-dom";
 import UserContext from "../../context/UserContext";
-import ErrorNotice from "../misc/ErrorNotice";
+import ErrorNotice from "../ErrorNotice/ErrorNotice";
 import axios from "axios";
 import "../../style.css";
 

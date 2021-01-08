@@ -1,4 +1,4 @@
-import Reac, { useContext } from "react";
+import React, { useContext } from "react";
 import axios from "axios";
 import UserContext from "../../../context/UserContext";
 import "./style.drama.css";

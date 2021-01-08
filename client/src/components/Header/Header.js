@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import AuthOptions from "../auth/AuthOptions";
+import AuthOptions from "../AuthOptions/AuthOptions";
 
 const Header = () => {
   return (
