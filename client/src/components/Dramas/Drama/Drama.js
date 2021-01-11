@@ -1,11 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import UserContext from "../../../context/UserContext";
 
 import "./style.drama.css";
+// import { useHistory } from "react-router-dom";
 
 const Drama = ({ title, image, description, rating, id }) => {
-  const { userData } = useContext(UserContext);
+  const { userData, setDramaData } = useContext(UserContext);
+  const [hoveredDelte, setHoveredDelete] = useState(false);
+  const [hoveredEdit, setHoveredEdit] = useState(false);
 
   const handleRatings = () => {
     if (rating === 5) {
@@ -68,9 +72,44 @@ const Drama = ({ title, image, description, rating, id }) => {
     }
   };
 
+  const handleEdit = async () => {
+    console.log("we pressed the edit a drama button");
+    // grab the current drama information
+    const dramaRes = await axios.get(`http://localhost:5000/dramas/${id}`, {
+      headers: { "x-auth-token": userData.token },
+    });
+
+    // set the context of the drama to this so form can have access to the current drama
+    if (dramaRes.data) {
+      setDramaData({
+        dramaId: id,
+        drama: dramaRes.data,
+      });
+    }
+  };
+
   return (
     <div className="drama">
-      <button onClick={handleDelete}>X</button>
+      <div className="drama-icons">
+        <div className="drama-icons-wrapper">
+          <Link className="drama-icons-wrapper i edit" to="/form">
+            <i
+              onMouseOver={() => setHoveredEdit(true)}
+              onMouseLeave={() => setHoveredEdit(false)}
+              onClick={handleEdit}
+              className={hoveredEdit ? "fas fa-edit" : "far fa-edit"}
+            ></i>
+          </Link>
+
+          <i
+            onMouseOver={() => setHoveredDelete(true)}
+            onMouseLeave={() => setHoveredDelete(false)}
+            onClick={handleDelete}
+            className={hoveredDelte ? "fas fa-trash-alt" : "far fa-trash-alt"}
+          ></i>
+        </div>
+      </div>
+
       <h4>{title}</h4>
       <img src={image} alt="drama_image" />
       <p>Description: {description}</p>

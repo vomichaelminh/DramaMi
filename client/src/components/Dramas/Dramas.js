@@ -9,7 +9,7 @@ const Dramas = ({ dramas }) => {
         <h2>My Drama List</h2>
       </div>
       <div className="dramas">
-        {dramas ? console.log(dramas) : ""}
+        {/* {dramas ? console.log(dramas) : ""} */}
         {dramas
           ? dramas.map((drama) => (
               <Drama

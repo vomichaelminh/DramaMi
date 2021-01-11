@@ -17,6 +17,8 @@ const App = () => {
     user: undefined,
   });
 
+  const [dramaData, setDramaData] = useState(null);
+
   useEffect(() => {
     const checkLoggedin = async () => {
       // grab current token in browser
@@ -47,7 +49,9 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <UserContext.Provider value={{ userData, setUserData }}>
+        <UserContext.Provider
+          value={{ userData, setUserData, dramaData, setDramaData }}
+        >
           <Header />
           <div className="container">
             <Switch>
