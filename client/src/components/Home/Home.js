@@ -9,6 +9,7 @@ const Home = () => {
   const { userData } = useContext(UserContext);
   const [dramas, setDramas] = useState();
 
+  // grabs current dramas if logged in user
   useEffect(() => {
     const getCurrentDramas = async () => {
       if (userData.token) {
@@ -19,7 +20,7 @@ const Home = () => {
       }
     };
     getCurrentDramas();
-  }, [userData]);
+  }, [userData, dramas]);
 
   return (
     <div className="page">

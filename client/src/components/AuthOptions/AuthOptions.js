@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import UserContext from "../../context/UserContext";
+import "./style.auth.css";
 const AuthOptions = () => {
   const { userData, setUserData } = useContext(UserContext);
 
@@ -24,8 +25,12 @@ const AuthOptions = () => {
         <button onClick={logout}>Log out</button>
       ) : (
         <>
-          <button onClick={register}>Register</button>
-          <button onClick={login}>Login</button>
+          <button className="register" onClick={register}>
+            Register
+          </button>
+          <button className="login" onClick={login}>
+            Login
+          </button>
         </>
       )}
     </nav>

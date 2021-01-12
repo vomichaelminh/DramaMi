@@ -85,7 +85,7 @@ const Form = () => {
 
   return (
     <div className="form-container">
-      {dramaData ? dramaData.dramaId : <h2>Add a Drama</h2>}
+      {dramaData ? <h2>Edit this drama</h2> : <h2>Add a Drama</h2>}
       {error && (
         <ErrorNotice message={error} clearError={() => setError(undefined)} />
       )}
@@ -128,13 +128,14 @@ const Form = () => {
           {dramaData ? (
             <>
               <button type="submit">Edit Drama</button>
-              <button onClick={handleReset}>Cancel Edit</button>
+              {/* <button className="cancel" onClick={handleReset}>
+                Cancel Edit
+              </button> */}
             </>
           ) : (
             <button type="submit">Add Drama</button>
           )}
 
-          <br />
           <Link to="/">View Dramas</Link>
         </div>
       </form>
