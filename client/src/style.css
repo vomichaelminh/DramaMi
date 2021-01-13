@@ -106,11 +106,15 @@ li {
 
 @media screen and (max-width: 550px) {
   #header .title {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
   #header .auth-options button {
     padding: 0 0.5rem;
     font-size: 0.9rem;
+  }
+
+  .header-right h4 {
+    font-size: 0.8rem;
   }
   .form {
     width: 300px;

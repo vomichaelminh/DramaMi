@@ -7,9 +7,9 @@ const Dramas = ({ dramas }) => {
     <div>
       <div className="top">
         <h2>My Drama List</h2>
+        {!dramas ? <h4>Your collection of dramas is currently empty</h4> : ""}
       </div>
       <div className="dramas">
-        {/* {dramas ? console.log(dramas) : ""} */}
         {dramas
           ? dramas.map((drama) => (
               <Drama

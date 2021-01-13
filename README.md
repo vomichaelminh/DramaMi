@@ -1,3 +1,3 @@
 # DramaMi
 
-Web app which helps keep track of dramas and find new ones
+Drama web app which allows you to keep track of watched dramas and watch lists for new ones.

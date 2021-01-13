@@ -90,30 +90,36 @@ const Drama = ({ title, image, description, rating, id }) => {
 
   return (
     <div className="drama">
-      <div className="drama-icons">
-        <div className="drama-icons-wrapper">
-          <Link className="drama-icons-wrapper i edit" to="/form">
-            <i
-              onMouseOver={() => setHoveredEdit(true)}
-              onMouseLeave={() => setHoveredEdit(false)}
-              onClick={handleEdit}
-              className={hoveredEdit ? "fas fa-edit" : "far fa-edit"}
-            ></i>
-          </Link>
+      <div className="drama-content">
+        <div className="drama-icons">
+          <div className="drama-icons-wrapper">
+            <Link className="drama-icons-wrapper i edit" to="/form">
+              <i
+                onMouseOver={() => setHoveredEdit(true)}
+                onMouseLeave={() => setHoveredEdit(false)}
+                onClick={handleEdit}
+                className={hoveredEdit ? "fas fa-edit" : "far fa-edit"}
+              ></i>
+            </Link>
 
-          <i
-            onMouseOver={() => setHoveredDelete(true)}
-            onMouseLeave={() => setHoveredDelete(false)}
-            onClick={handleDelete}
-            className={hoveredDelte ? "fas fa-trash-alt" : "far fa-trash-alt"}
-          ></i>
+            <i
+              onMouseOver={() => setHoveredDelete(true)}
+              onMouseLeave={() => setHoveredDelete(false)}
+              onClick={handleDelete}
+              className={hoveredDelte ? "fas fa-trash-alt" : "far fa-trash-alt"}
+            ></i>
+          </div>
+        </div>
+
+        <h2>{title}</h2>
+        <div className="img-wrapper">
+          <img src={image} alt="drama_image" />
+        </div>
+        <div className="bottom">
+          <p>{description}</p>
+          {handleRatings()}
         </div>
       </div>
-
-      <h4>{title}</h4>
-      <img src={image} alt="drama_image" />
-      <p>Description: {description}</p>
-      {handleRatings()}
     </div>
   );
 };
